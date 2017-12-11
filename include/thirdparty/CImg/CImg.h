@@ -208,6 +208,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
+#define HAVE_STRUCT_TIMESPEC
 #include <pthread.h>
 #ifdef cimg_use_xshm
 #include <sys/ipc.h>

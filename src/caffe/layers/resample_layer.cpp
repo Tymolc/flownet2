@@ -1,4 +1,4 @@
-// Copyright 2014 BVLC and contributors.
+/*// Copyright 2014 BVLC and contributors.
 
 #include <vector>
 
@@ -71,4 +71,4 @@ void ResampleLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
 INSTANTIATE_CLASS(ResampleLayer);
 REGISTER_LAYER_CLASS(Resample);
 
-}  // namespace caffe
+}  // namespace caffe*/

@@ -21,6 +21,9 @@
 #include <sys/stat.h>
 #include <stdio.h>
 
+//Windows
+#include <direct.h>
+
 #include <algorithm>
 #include <fstream>  // NOLINT(readability/streams)
 #include <string>
@@ -332,7 +335,7 @@ int main(int argc, char** argv) {
     batch = new leveldb::WriteBatch();
   } else if (db_backend == "lmdb") {  // lmdb
     LOG(INFO) << "Opening lmdb " << argv[arg_offset+2];
-    CHECK_EQ(mkdir(argv[arg_offset+2], 0744), 0)
+    CHECK_EQ(_mkdir(argv[arg_offset+2]), 0)
         << "mkdir " << argv[arg_offset+2] << "failed";
     CHECK_EQ(mdb_env_create(&mdb_env), MDB_SUCCESS) << "mdb_env_create failed";
     CHECK_EQ(mdb_env_set_mapsize(mdb_env, 1099511627776), MDB_SUCCESS)  // 1TB

@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 #include <leveldb/db.h>
+#define HAVE_STRUCT_TIMESPEC
 #include <pthread.h>
 
 #include <string>

@@ -4,6 +4,9 @@
 #include <cstdio>
 #include <ctime>
 
+// Windows
+#include <process.h>
+
 #include "caffe/common.hpp"
 #include "caffe/util/rng.hpp"
 
@@ -42,7 +45,7 @@ int64_t cluster_seedgen(void) {
   if (f)
     fclose(f);
 
-  pid = getpid();
+  pid = _getpid();
   s = time(NULL);
   seed = std::abs(((s * 181) * ((pid - 83) * 359)) % 104729);
   return seed;
